@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rose — Página Pessoal</title>
+  <meta name="description" content="Página pessoal de Rose — bio, serviços, portfólio e contato." />
+  <!-- Google Fonts (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0f1724;
+      --muted:#9aa4b2;
+      --accent:#cfa15b; /* cor principal (dourado) — troque conforme preferido */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      --accent-contrast: #fff;
+      --font-sans: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071026 0%, #081029 50%, #071023 100%);
+      color: #e8eef6;
+      font-family: var(--font-sans);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--maxw)}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent-contrast);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 6px rgba(255,255,255,0.02);
+      font-size:20px;
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent-contrast)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:26px;
+      border-radius:var(--radius);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+    }
+    .intro h1{margin:0;font-size:32px;letter-spacing:-0.6px}
+    .intro p.lead{color:var(--muted);margin-top:10px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{
+      padding:10px 16px;border-radius:10px;background:var(--accent);color:var(--accent-contrast);text-decoration:none;font-weight:700;
+      box-shadow: 0 6px 20px rgba(207,161,91,0.16);
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .profile-photo{
+      width:100%;
+      height:360px;
+      border-radius:12px;
+      background-size:cover;
+      background-position:center;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      min-height:260px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+    .section{
+      margin-bottom:22px;
+    }
+    .services li{margin-bottom:10px}
+    footer{color:var(--muted);font-size:14px;padding:18px 0;text-align:center}
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; }
+      .profile-photo{height:260px}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .grid-3{grid-template-columns:1fr}
+      nav{display:none}
+      header{align-items:flex-start;flex-direction:column;gap:12px}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700;color:var(--muted);font-size:13px}
+    .contact-card input, .contact-card textarea{
+      width:100%;padding:12px;border-radius:10px;background:transparent;color:inherit;border:1px solid rgba(255,255,255,0.06);resize:vertical;margin-top:8px;
+    }
+    .contact-row{display:flex;gap:12px}
+    .contact-row > *{flex:1}
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">R</div>
+        <div>
+          <div style="font-weight:800">Rose</div>
+          <div class="small muted">Criadora · Intuição · Sonhos</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="card intro" aria-labelledby="hero-title">
+          <h1 id="hero-title">Olá — eu sou Rose</h1>
+          <p class="lead" id="hero-sub">(Texto curto — profissão / tagline). Aqui você pode colocar em 2–3 frases sua missão e convite para conhecer seu trabalho.</p>
+
+          <div class="cta">
+            <a class="btn" href="#servicos">Meus serviços</a>
+            <a class="btn secondary" href="#contato">Contato</a>
+          </div>
+
+          <!-- quick info cards -->
+          <div style="margin-top:18px" class="grid-3">
+            <div class="card small">
+              <div class="tag">Serviço</div>
+              <div style="margin-top:8px;font-weight:700">Consulta Intuitiva</div>
+              <div class="small muted">Sessões online 45 min</div>
+            </div>
+            <div class="card small">
+              <div class="tag">Livro</div>
+              <div style="margin-top:8px;font-weight:700">Espelho Sagrado</div>
+              <div class="small muted">Em preparação</div>
+            </div>
+            <div class="card small">
+              <div class="tag">Lives</div>
+              <div style="margin-top:8px;font-weight:700">TikTok & Instagram</div>
+              <div class="small muted">Agenda mensal</div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <!-- Replace background-image URL with your hero photo -->
+          <div class="profile-photo" id="heroImage" style="background-image: url('https://via.placeholder.com/720x720.png?text=Foto+de+perfil');" role="img" aria-label="Foto de perfil"></div>
+        </aside>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre" class="section card" aria-labelledby="sobre-title">
+        <h2 id="sobre-title">Sobre</h2>
+        <p id="sobre-text" class="muted">Aqui vai sua bio completa — conte sua trajetória, áreas de atuação e o que torna você única. (Substitua este texto pela bio de 2–3 frases que enviar.)</p>
+      </section>
+
+      <!-- SERVIÇOS -->
+      <section id="servicos" class="section card" aria-labelledby="servicos-title">
+        <h2 id="servicos-title">Serviços</h2>
+        <ul class="services" id="services-list">
+          <li><strong>Consulta Intuitiva (45 min)</strong> — Descrição breve do serviço e link para agenda.</li>
+          <li><strong>Mentoria Espiritual</strong> — Programa de X encontros. (Personalize)</li>
+          <li><strong>Oficinas & Lives</strong> — Temas disponíveis: sonhos, sono, meditação.</li>
+        </ul>
+      </section>
+
+      <!-- PORTFÓLIO -->
+      <section id="portfolio" class="section card" aria-labelledby="portfolio-title">
+        <h2 id="portfolio-title">Portfólio</h2>
+        <p class="muted">Mostre trabalhos, textos, áudios ou links de lives. Substitua os itens abaixo por itens reais.</p>
+        <div id="portfolio-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px">
+          <div class="card small">Trabalho 1 — descrição curta</div>
+          <div class="card small">Trabalho 2 — descrição curta</div>
+          <div class="card small">Trabalho 3 — descrição curta</div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="section card contact-card" aria-labelledby="contato-title">
+        <h2 id="contato-title">Contato</h2>
+        <p class="small muted">Quer conversar? Preencha abaixo ou envie email para: <a href="mailto:seu@email.com" id="contactEmail">seu@email.com</a></p>
+
+        <!-- simple contact form (mailto fallback) -->
+        <form id="contactForm" onsubmit="return handleForm(event)">
+          <div class="contact-row">
+            <input id="name" name="name" placeholder="Seu nome" required />
+            <input id="email" name="email" type="email" placeholder="Seu email" required />
+          </div>
+          <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+          <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Enviar mensagem</button>
+            <div class="small muted" id="formNote">Ou envie email direto.</div>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Rose — Todos os direitos reservados · Desenvolvido com carinho
+    </footer>
+  </div>
+
+  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      // open mailto with prefilled subject/body (no backend)
+      const subject = encodeURIComponent("Contato do site — " + name);
+      const body = encodeURIComponent("Nome: " + name + "\\nEmail: " + email + "\\n\\nMensagem:\\n" + msg);
+      const mailto = "mailto:seu@email.com?subject=" + subject + "&body=" + body;
+      window.location.href = mailto;
+      return false;
+    }
+
+    // Helper: function to programmatically replace placeholders (you can call later)
+    function personalize(options = {}) {
+      if(options.name) document.getElementById('hero-title').textContent = "Olá — eu sou " + options.name;
+      if(options.tagline) document.getElementById('hero-sub').textContent = options.tagline;
+      if(options.bio) document.getElementById('sobre-text').textContent = options.bio;
+      if(options.heroImage) document.getElementById('heroImage').style.backgroundImage = 'url(' + options.heroImage + ')';
+      if(options.email) {
+        const a = document.getElementById('contactEmail');
+        a.textContent = options.email;
+        a.href = 'mailto:' + options.email;
+        document.getElementById('contactForm').onsubmit = function(e){
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const msg = document.getElementById('message').value.trim();
+          const subject = encodeURIComponent("Contato do site — " + name);
+          const body = encodeURIComponent("Nome: " + name + "\\nEmail: " + email + "\\n\\nMensagem:\\n" + msg);
+          window.location.href = 'mailto:' + options.email + '?subject=' + subject + '&body=' + body;
+          return false;
+        };
+      }
+      if(options.accent) {
+        document.documentElement.style.setProperty('--accent', options.accent);
+      }
+      if(options.services && Array.isArray(options.services)){
+        const ul = document.getElementById('services-list');
+        ul.innerHTML = '';
+        options.services.forEach(s=>{
+          const li = document.createElement('li');
+          li.innerHTML = '<strong>' + (s.title||'Serviço') + '</strong> — ' + (s.desc||'Descrição');
+          ul.appendChild(li);
+        });
+      }
+      if(options.portfolio && Array.isArray(options.portfolio)){
+        const grid = document.getElementById('portfolio-grid');
+        grid.innerHTML = '';
+        options.portfolio.forEach(item=>{
+          const d = document.createElement('div');
+          d.className = 'card small';
+          d.innerHTML = '<strong>' + (item.title||'Item') + '</strong><div class="small muted">' + (item.desc||'Descrição') + '</div>';
+          grid.appendChild(d);
+        });
+      }
+    }
+
+    // prefill with example personalization (you can remove)
+    personalize({
+      name: 'Rose',
+      tagline: 'Pesquisadora de sonhos, intuição e espiritualidade',
+      bio: 'Sou Rose — trabalho integrando neurociência, práticas espirituais e sonhos para ajudar pessoas a reconectar com sua essência.',
+      heroImage: 'https://via.placeholder.com/720x720.png?text=Foto+de+Perfil',
+      email: 'contato@seudominio.com',
+      accent: '#cfa15b'
+    });
+  </script>
+</body>
+</html>
